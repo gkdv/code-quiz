@@ -47,22 +47,24 @@ function showQuestion() {
         $(index).text(questions[questionNum].choices[i]);
 
     }
-    questionNum++;
+
 }
 
 
 correct = 0;
 wrong = 0;
 $('.posAnswer').on('click', function () {           //why when i used the id it doesnt work?
-    var guess = $('.posAnswer').text();
+    var guess = $(this).text();
     if (guess === questions[questionNum].answer) {
         correct++;
+
     } else {
         wrong++;
+
     }
-    
+    questionNum++;
     showQuestion();
-    console.log(guess)
+    console.log('2' + guess)
     console.log(correct)
     console.log(wrong)
 })
