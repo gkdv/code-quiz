@@ -1,6 +1,7 @@
 .card{
     display: flex;
     margin: 10% 25% 0% 25%;
+    border: none;
 }
 .buttons{
     display: flex;
@@ -9,4 +10,7 @@
 }
 .btn{
     margin: 2% 30%;
+}
+.buttons{
+    display: none;
 }
