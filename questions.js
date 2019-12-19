@@ -9,5 +9,21 @@ var questions = [
         choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
         answer: "parentheses"
     },
-    ///etc.
+    {
+        title: "Every JQuery selector has to start with what special character:",
+        choices: ["#", "@", "$", "*"],
+        answer: "$"
+    },
+    {
+        title: "The selector for a class is:",
+        choices: [".", "$", "@", "&"],
+        answer: "."
+    },
+    {
+        title: "The selector for an id is:",
+        choices: ["!", "%", "#", "*"],
+        answer: "#"
+    }
+    
+
 ];

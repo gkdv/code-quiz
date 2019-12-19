@@ -2,7 +2,7 @@
 
 var btnChild = 1;
 for (i = 0; i < $('.buttons').children().length; i++) {
-    
+
     index = $('.buttons').children().get(i)
     $(index).attr('data-number', btnChild)
     btnChild++
@@ -12,7 +12,8 @@ $('#startGameBtn').on('click', function () {
     $('#startGameBtn').hide();
     //start timer
     setTime();
-    //pull up first question
+    //pull up questions
+    displayQuestions();
 })
 
 
@@ -31,17 +32,53 @@ function setTime() {
     }, 1000);
 }
 
+
+
+function displayQuestions() {
+    $('.buttons').show();
+    showQuestion();
+}
+
+questionNum = 0;
+function showQuestion() {
+    $('.card-body').text(questions[questionNum].title);
+    for (i = 0; i < $('.buttons').children().length; i++) {
+        index = $('.buttons').children().get(i);
+        $(index).text(questions[questionNum].choices[i]);
+
+    }
+    questionNum++;
+}
+
+
+correct = 0;
+wrong = 0;
+$('.posAnswer').on('click', function () {           //why when i used the id it doesnt work?
+    var guess = $('.posAnswer').text();
+    if (guess === questions[questionNum].answer) {
+        correct++;
+    } else {
+        wrong++;
+    }
+    
+    showQuestion();
+    console.log(guess)
+    console.log(correct)
+    console.log(wrong)
+})
+
+
+
+
 // function sendMessage() {
-//     timeEl.textContent = " ";
+    //     timeEl.textContent = " ";
 
-//     var imgEl = document.createElement("img");
+    //     var imgEl = document.createElement("img");
 
-//     imgEl.setAttribute("src", "images/image_1.jpg");
-//     mainEl.appendChild(imgEl);
+    //     imgEl.setAttribute("src", "images/image_1.jpg");
+    //     mainEl.appendChild(imgEl);
 
-// }
-
-
+    // }
 
 
 
@@ -53,5 +90,4 @@ function setTime() {
 
 
 
-// $('.card-body').text(questions[0].title);
-// $(index).text(questions[0].choices[i])
+
