@@ -71,10 +71,15 @@ function showQuestion() {
 function populateStorage() {
 
     var playerInitials = prompt("END OF GAME! \nTo save your score enter your initials: ");
-    var playerScore = `correct: ${correct} \nwrong: ${wrong}`
+    var playerScoreLS = `${correct} \n${wrong}`
+    var playerScore = `Correct: ${correct} \nWrong: ${wrong}`
+    if (localStorage.getItem(playerInitials[0]) < correct || localStorage.getItem(playerInitials) == 'undefined'){
+        localStorage.setItem(playerInitials, playerScoreLS);
+        alert(`YOUR SCORE: \n\n${(playerScore)} \n\n\nYOUR HIGH SCORE: \n\n${localStorage.getItem(playerInitials)}`);
 
-    localStorage.setItem(playerInitials, playerScore);
-    alert(`YOUR SCORE: \n\n${(playerScore)} \n\n\nYOUR HIGH SCORE: \n\n${localStorage.getItem(playerInitials)}`);
+    } else {
+        alert(`YOUR SCORE: \n\n${(playerScore)} \n\n\nYOUR HIGH SCORE: \n\n${localStorage.getItem(playerInitials)}`);
+    }
 
     
 }
