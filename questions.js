@@ -23,6 +23,16 @@ var questions = [
         title: "The selector for an id is:",
         choices: ["!", "%", "#", "*"],
         answer: "#"
+    },
+    {
+        title: "What does ajax stand for:",
+        choices: ["All junk and XML", "Asynchronous JavaScript and XML", "Ask Jack about XML", "None of these"],
+        answer: "Asynchronous JavaScript and XML"
+    },
+    {
+        title: "What does CDN stand for",
+        choices: ["Nothing", "See Dee Nnn", "Content Delivery Network", "Correct direct notation"],
+        answer: "Content Delivery Network"
     }
     
 
